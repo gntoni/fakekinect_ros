@@ -1,0 +1,21 @@
+<launch>
+  <arg name="node_name"         default="towel_unfold"/>
+  <arg name="frame_id"         default="kinect2_rgb_optical_frame"/>
+  <arg name="depth_img_topic"   default="/kinect2/qhd/image_depth_rect"/>
+  <arg name="color_img_topic"   default="/kinect2/qhd/image_color_rect"/>
+  <arg name="camera_info_topic"   default="/kinect2/qhd/camera_info"/>
+  <arg name="color_images_path"   default="/home/toni/Data/cloth/color"/>
+  <arg name="depth_images_path"   default="/home/toni/Data/cloth/depth"/>
+
+  <node pkg="fakekinect" type="fakekinect.py" name="fakekinect" output="screen">
+    <param name="node_name" type="str" value="$(arg node_name)"/>
+    <param name="frame_id" type="str" value="$(arg frame_id)"/>
+    <param name="depth_img_topic" type="str" value="$(arg depth_img_topic)"/>
+    <param name="color_img_topic" type="str" value="$(arg color_img_topic)"/>
+    <param name="camera_info_topic" type="str" value="$(arg camera_info_topic)"/>
+    <param name="color_images_path" type="str" value="$(arg color_images_path)"/>
+    <param name="depth_images_path" type="str" value="$(arg depth_images_path)"/>    
+  </node>
+
+
+</launch>
